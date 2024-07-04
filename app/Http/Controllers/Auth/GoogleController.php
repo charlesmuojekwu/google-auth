@@ -32,7 +32,7 @@ class GoogleController extends Controller
             // Pass the email and OTP to the view
             return redirect()->route('home')->with(['email' => $email, 'otp' => $otp]);
         } catch (\Exception $e) {
-            return redirect()->route('/')->with('error', 'Failed to authenticate with Google');
+            return redirect()->route('login')->with('error', 'Failed to authenticate with Google');
         }
     }
 }
